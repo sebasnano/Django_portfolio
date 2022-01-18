@@ -5,6 +5,7 @@ charset-normalizer==2.0.10
 click==8.0.3
 Django==4.0.1
 django-crispy-forms==1.13.0
+gunicorn==20.1.0
 idna==3.3
 mypy-extensions==0.4.3
 pathspec==0.9.0
