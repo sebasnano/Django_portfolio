@@ -1,0 +1,58 @@
+{% extends 'layout.html' %} {% block content %} {% load static %}
+<header class="row bg-black">
+  <div class="col-md-4">
+    <img src="{% static 'portfolio/foto.jpg' %}" alt="" class="img-fluid" />
+  </div>
+  <div class="col-md-8 my-auto">
+    <h1>Sebastian Rodriguez</h1>
+    <h3>Soy un Python Fullstack Developer</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+      necessitatibus blanditiis voluptates dolores, quasi corporis ex eum
+      reprehenderit dolor quos, mollitia consectetur et, recusandae sequi
+      facere. Tempora repellat fuga quas natus ut vel numquam ad. Tempora, omnis
+      odit! Veniam, quia officia asperiores dolorem sunt aliquid ullam totam
+      quidem quasi saepe. Sapiente quos quibusdam laborum iste dolorem
+      laudantium autem distinctio eveniet consequatur aspernatur adipisci minus
+      velit dicta ut possimus, reprehenderit cumque nisi placeat minima labore,
+      vitae magni. Incidunt, suscipit nihil quasi facere corrupti fugit ad
+      laudantium temporibus commodi vero repellat vel consequatur facilis,
+      asperiores eveniet nisi tempore, perspiciatis maxime excepturi? Nobis?
+    </p>
+    <a
+      href="{% static 'portfolio/Profile.pdf' %}"
+      class="btn btn-outline-primary btn-lg rounded-0 my-3"
+      target="_blank"
+      >Download CV</a
+    >
+  </div>
+</header>
+<h3>Mis Proyectos</h3>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, nisi?</p>
+<div class="row my-4 text-center">
+  {% for project in projects %}
+
+  <div class="col-md-4 p-4">
+    <div class="card bg-black card-project">
+      <img
+        src="{{ project.image.url }}"
+        alt="{{ project.title }}"
+        class="img-fluid"
+      />
+      <div class="card-body">
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.description }}</p>
+        {% if project.url %}
+        <a
+          href="{{ project.url }}"
+          class="btn btn-outline-light rounded-0 btn-sm mx-auto"
+          >{{ project.url|truncatechars:15 }}</a
+        >
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+{% endblock content %}

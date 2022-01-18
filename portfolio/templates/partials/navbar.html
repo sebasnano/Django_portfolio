@@ -1,0 +1,24 @@
+{% load static%}
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="container">
+    <a class="nav-link fw-bold fst-italic" href="/"
+      >Home <span class="visually-hidden">(current)</span></a
+    >
+    <ul class="nav navbar-nav ms-auto">
+      <div class="collapse navbar-collapse">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'blog:posts' %}">Blog</a>
+        </li>
+        <li class="nav-item d-flex align-item-center">
+          <a
+            class="btn btn-outline-primary btn-sm"
+            href="{% static 'portfolio/Profile.pdf' %}"
+            target="_blank"
+            role="button"
+            >Download CV</a
+          >
+        </li>
+      </div>
+    </ul>
+  </div>
+</nav>
